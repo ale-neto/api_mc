@@ -6,7 +6,7 @@ import { NewsRepository } from "../repository/newsRepository";
 export class NewsService implements INewsService {
   async get(_id: string): Promise<News> {
     let result = await NewsRepository.findById(_id);
-    return result as any;
+    return result;
   }
 
   async getAll(page: number, qtd: number): Promise<Result<News>> {
